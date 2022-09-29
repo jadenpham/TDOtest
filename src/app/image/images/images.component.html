@@ -1,24 +1,21 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-6">
+  <div class="row center-xs">
+    <div class="col-xs-6 center-xs">
       <p>Image Descriptions</p>
       <table>
         <tr *ngFor="let image of imageList">
-          <td><a href="{{image.imageId}}"> {{image.imageDescription}}</a></td>
+          <td><button (click)="onClick(image.imageId)"> {{image.imageDescription}}</button></td>
         </tr>
       </table>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-6" *ngIf="displayImagePath">
       <p>Actual Image</p>
+      <div class="row center-xs" >
+        <div class="col-xs-12 center-xs">
+          <img src="{{displayImagePath}}" alt="">
+        </div>
+
+      </div>
     </div>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="row">
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
-    <div class="col-md-4">.col-md-4</div>
   </div>
 </div>
